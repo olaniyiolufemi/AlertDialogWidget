@@ -1,8 +1,8 @@
 AlertDialog Widget Demo
 This project demonstrates the usage of Flutter's AlertDialog widget with three different implementations showcasing its core features and customization options.
 
-https://via.placeholder.com/300x600?text=AlertDialog+Demo+Screenshot
-(Actual screenshot would show a Flutter app with blue app bar titled "AlertDialog Demo" and three buttons labeled "Basic Dialog", "Styled Dialog", and "Action Dialog")
+<img width="327" height="545" alt="Screenshot 2025-07-17 151531" src="https://github.com/user-attachments/assets/d5a2a99a-e68f-43a6-ac68-612917cea1d4" />
+
 
 About the AlertDialog Widget
 The AlertDialog widget displays a material design dialog box with optional title, content, and action buttons, typically used for important information or decision points.
