@@ -15,21 +15,12 @@ content: Main body content (supports any widget)
 actions: Interactive buttons at the bottom of the dialog
 
 Run Instructions
-Ensure Flutter SDK is installed (version 3.0 or higher)
-
-Clone this repository:
-
-bash
-git clone https://github.com/yourusername/alertdialog-demo.git
-Navigate to project directory:
-
-bash
-cd alertdialog-demo
-Install dependencies:
-
-bash
-flutter pub get
-Run the application:
-
-bash
-flutter run
+- Ensure Flutter SDK is installed (version 3.0 or higher)
+- Clone this repository:
+- git clone https://github.com/yourusername/alertdialog-demo.git
+- Navigate to project directory:
+- cd alertdialog-demo
+- Install dependencies:
+- flutter pub get
+- Run the application:
+- flutter run
