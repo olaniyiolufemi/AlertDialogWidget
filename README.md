@@ -1,19 +1,35 @@
-# AlertDialog
+AlertDialog Widget Demo
+This project demonstrates the usage of Flutter's AlertDialog widget with three different implementations showcasing its core features and customization options.
 
-A new Flutter project created with FlutLab - https://flutlab.io
+https://via.placeholder.com/300x600?text=AlertDialog+Demo+Screenshot
+(Actual screenshot would show a Flutter app with blue app bar titled "AlertDialog Demo" and three buttons labeled "Basic Dialog", "Styled Dialog", and "Action Dialog")
 
-## Getting Started
+About the AlertDialog Widget
+The AlertDialog widget displays a material design dialog box with optional title, content, and action buttons, typically used for important information or decision points.
 
-A few resources to get you started if this is your first Flutter project:
+Key Attributes Demonstrated
+title: Header text of the dialog (typically in larger font)
 
-- https://flutter.dev/docs/get-started/codelab
-- https://flutter.dev/docs/cookbook
+content: Main body content (supports any widget)
 
-For help getting started with Flutter, view our
-https://flutter.dev/docs, which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+actions: Interactive buttons at the bottom of the dialog
 
-## Getting Started: FlutLab - Flutter Online IDE
+Run Instructions
+Ensure Flutter SDK is installed (version 3.0 or higher)
 
-- How to use FlutLab? Please, view our https://flutlab.io/docs
-- Join the discussion and conversation on https://flutlab.io/residents
+Clone this repository:
+
+bash
+git clone https://github.com/yourusername/alertdialog-demo.git
+Navigate to project directory:
+
+bash
+cd alertdialog-demo
+Install dependencies:
+
+bash
+flutter pub get
+Run the application:
+
+bash
+flutter run
