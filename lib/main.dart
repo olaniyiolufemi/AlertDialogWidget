@@ -1,42 +1,117 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const AlertDialogDemo());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class AlertDialogDemo extends StatelessWidget {
+  const AlertDialogDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'AlertDialog Demo',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const DialogScreen(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+class DialogScreen extends StatelessWidget {
+  const DialogScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
+      appBar: AppBar(title: const Text('AlertDialog Demo')),
       body: Center(
-        child: Text(
-          'Hello, World!',
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => _showBasicDialog(context),
+              child: const Text('Basic Dialog'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _showStyledDialog(context),
+              child: const Text('Styled Dialog'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _showActionDialog(context),
+              child: const Text('Action Dialog'),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+
+  // Basic Alert Dialog
+  void _showBasicDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Basic Alert'),
+        content: const Text('This is a basic alert dialog example.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Styled Alert Dialog
+  void _showStyledDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Congratulations!'),
+        content: const Text('You completed the tutorial successfully.'),
+        backgroundColor: Colors.amber[50],
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: const BorderSide(color: Colors.amber, width: 2),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.thumb_up),
+            onPressed: () => Navigator.pop(context),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Action Alert Dialog
+  void _showActionDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Confirm Action'),
+        content: const Text('Do you want to save changes?'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Changes discarded')),
+              );
+            },
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Changes saved successfully!')),
+              );
+            },
+            child: const Text('Save'),
+          ),
+        ],
       ),
     );
   }
